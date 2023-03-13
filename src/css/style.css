@@ -1,0 +1,116 @@
+body{
+    font-family:  'Poppins', sans-serif;
+
+    max-width: 1280px;
+    margin: 0 auto;    
+}
+
+main:after{ /*pseudo elemento (por cima de tudo inicialmente)*/
+    content: '';
+    min-height: 100vh;
+    width: 100vw;   
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg,rgba(0,0,0,1) 10%, rgba(0,0,0,0.05926120448179273) 50%, rgba(0,0,0,1) 90%);  
+    z-index: -1;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column; /*um embaixo do ouutro*/
+    justify-content: space-evenly;
+    min-height: 100vh; 
+}
+
+.informacoes .logo{
+    max-width: 375px;
+    filter: invert(1); /*invert é uma função em css, e passo o parametro 1*/
+    margin-bottom: 80px;
+}
+
+.informacoes .descricao{
+    width: 49%;
+    font-size: 24px;
+    color: #fff;
+    line-height: 30px;  /*espaçamento entre as linhas*/
+}
+
+.botoes-carrossel{
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /*espaçamento entre todos os elementos (entre eles)*/
+}
+
+.botoes-carrossel .botao{
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: #fff;
+}
+
+.botoes-carrossel .botao.selecionado{   /*maior especificidade ele sobre escreve a menor*/
+    background-color: rgb(29, 29, 29);
+}
+
+.menu-lateral{
+    position: fixed;
+    top: 0;   
+    right: 0;  
+    width: 80px;    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.menu-lateral ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-lateral .icone{
+    width: 30px;
+    filter: invert(1);
+    transition: 0.3s ease-in-out;   /*começar e terminar a animação/transição suavemente*/
+}
+
+.menu-lateral .icone:hover{
+    transform: scale(1.2);  /*quando eu passar o mouse por cima ele vai escalar 1.2 nesse caso*/
+}
+
+.carrossel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: -1; /*ele vai fazer a imagem ficar por baixo de tudo. Se fosse positivo teria o efeito contrario... Z eixo da profundidade*/
+}
+
+.carrossel .imagem{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /*evitar perder qualidade quando centralizo ou algo do tipo. Fit == Caber*/
+    display: none;
+
+    animation: mudarImagem 0.7s;
+}
+
+.carrossel .imagem.ativa{
+    display: block;
+}
+
+@keyframes mudarImagem{
+    from{
+        opacity: 0.85;  /*primeiro estado da animação*/
+    }
+    to{
+        opacity: 1;
+    }
+}
