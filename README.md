@@ -3,11 +3,13 @@ Este é um projeto de um site para a série The Last of Us da HBO Max. O site é
 
 <h2>Tecnologias Utilizadas</h2>
 As tecnologias utilizadas neste projeto são:<br>
-
-HTML<br>
-CSS<br>
-JavaScript
-
+<br>
+<div>
+<img src="https://skillicons.dev/icons?i=html" width=40 height=40 align="left">
+<img src="https://skillicons.dev/icons?i=css" width=40 height=40 align="left">
+<img src="https://skillicons.dev/icons?i=js" width=40 height=40 align="left">
+</div>
+<br>
 <h2>Funcionalidades</h2>
 O site possui as seguintes funcionalidades:
 
